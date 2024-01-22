@@ -3,7 +3,7 @@ const { webkit } = require('playwright');
 
 (async () => {
   if (process.argv.length != 4) {
-    console.log('usage: node check_ama_membership.ts <AMA_NUMBER> <LAST_NAME>');
+    console.log('usage: node check_membership.ts <AMA_NUMBER> <LAST_NAME>');
     process.exit(1);
   }
   const amaNumber = process.argv[2];
