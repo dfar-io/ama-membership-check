@@ -36,6 +36,10 @@ const { webkit } = require('playwright');
       throw new Error ("Unable to find status or error message.");
     } else if (hasErrorMessage) {
       console.log('Unable to verify membership.');
+    } else {
+      const innerText = await page.innerText('.messages--status');
+      const date = innerText.split(' ').pop().replace('.','');
+      console.log(date);
     }
   } catch (err) {
     await context.close();
